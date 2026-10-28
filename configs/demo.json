@@ -1,0 +1,14 @@
+{
+  "mode": "sim",
+  "dataset_root": "examples/demo_dataset",
+  "image": {
+    "backend": "sim",
+    "device": "0",
+    "fps": 30
+  },
+  "wrist_image": {
+    "backend": "sim",
+    "device": "1",
+    "fps": 30
+  }
+}

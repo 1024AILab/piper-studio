@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piper-studio"
+version = "0.1.0"
+description = "Local Piper teleoperation capture and replay, compatible with LeoApollo/piper_single"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "gradio==6.27.0",
+  "numpy>=1.26,<3",
+  "Pillow>=10,<13",
+  "pyarrow>=17,<26",
+  "filelock>=3.16,<4",
+]
+
+[project.optional-dependencies]
+hardware = ["python-can==4.6.1", "opencv-python-headless>=4.10,<5"]
+mac = ["python-can[gs-usb]==4.6.1", "libusb-package==1.0.30.0", "opencv-python-headless>=4.10,<5"]
+realsense = [
+  "pyrealsense2>=2.55,<3; sys_platform != 'darwin'",
+]
+test = ["pytest>=8,<10", "datasets==3.6.0", "piper-sdk==0.6.2"]
+
+[project.scripts]
+piper-studio = "piper_studio.app:main"
+piper-dataset-check = "piper_studio.dataset:main"
+piper-doctor = "piper_studio.doctor:main"
+
+[tool.setuptools.packages.find]
+include = ["piper_studio*"]
+
+[tool.setuptools.package-data]
+piper_studio = ["*.css", "translations.*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

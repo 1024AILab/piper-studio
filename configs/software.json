@@ -1,0 +1,18 @@
+{
+  "mode": "software",
+  "dataset_root": "datasets/piper_dataset",
+  "follower_port": "can_follower",
+  "leader_port": "can_leader",
+  "leader_source": "control",
+  "motion_mode": "mit",
+  "image": {
+    "backend": "opencv",
+    "device": "/dev/video0",
+    "fps": 30
+  },
+  "wrist_image": {
+    "backend": "opencv",
+    "device": "/dev/video2",
+    "fps": 30
+  }
+}

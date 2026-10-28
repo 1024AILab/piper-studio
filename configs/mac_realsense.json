@@ -1,0 +1,19 @@
+{
+  "mode": "hardware_bus",
+  "dataset_root": "datasets/piper_dataset",
+  "can_backend": "gs_usb",
+  "can_bitrate": 1000000,
+  "follower_port": "0",
+  "leader_source": "control",
+  "motion_mode": "mit",
+  "image": {
+    "backend": "realsense",
+    "device": "REPLACE_FRONT_SERIAL",
+    "fps": 30
+  },
+  "wrist_image": {
+    "backend": "realsense",
+    "device": "REPLACE_WRIST_SERIAL",
+    "fps": 30
+  }
+}
